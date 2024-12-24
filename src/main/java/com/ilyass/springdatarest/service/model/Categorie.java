@@ -16,16 +16,22 @@ import java.util.List;
 @Builder
 public class Categorie {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
+
+    @Column(unique = true, nullable = false)
     private String categorie;
 
-    @OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Article> articles = new ArrayList<>();
 
     public void addArticle(Article article) {
         article.setCategorie(this);
         articles.add(article);
+    }
+
+    public void removeArticle(Article article) {
+        article.setCategorie(null);
+        articles.remove(article);
     }
 }

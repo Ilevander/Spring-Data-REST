@@ -9,17 +9,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Builder
 @AllArgsConstructor
+@Builder
 public class Article {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String description;
+
     private Double price;
+
     private Double quantity;
 
     @ManyToOne
-    @JoinColumn(name = "categorie_id")
+    @JoinColumn(name = "categorie_id", nullable = false)
     private Categorie categorie;
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
 }
