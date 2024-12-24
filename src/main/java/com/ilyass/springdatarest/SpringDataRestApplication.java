@@ -14,9 +14,9 @@ import java.util.ArrayList;
 @SpringBootApplication
 public class SpringDataRestApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SpringDataRestApplication.class, args);
-    }
+//    public static void main(String[] args) {
+//        SpringApplication.run(SpringDataRestApplication.class, args);
+//    }
 
     @Bean
     public CommandLineRunner initDatabase(CategoryRepository categorieRepository,

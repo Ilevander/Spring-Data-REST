@@ -30,10 +30,18 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!--
+        Il s’agit du starter de Spring Data JPA. Ce dernier  permet de d’ajouter toutes les dépendances nécessaires et permet également d’auto-configurer l’api JPA.
+        Le starter spring-boot-starter-data-jpa utilise comme implémentation par défaut de l’api JPA, le Framework Hibernate. Pour rappel, l’api JPA est implémentée par 03 Framework : Hibernate, Toplink et EclipseLink.
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!--
+        This is the starter for Spring Data Rest.
+        It allows you to add all the necessary dependencies and also allows you to auto-configure the Spring Data Rest Framework.
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
@@ -45,6 +53,10 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!--
+         Il s’agit de la base de données virtuelle H2.
+         H2 est une base de données embarquée qui se démarre et s’arrête avec l’application.
+        -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
