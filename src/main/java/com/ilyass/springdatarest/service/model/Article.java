@@ -22,7 +22,7 @@ public class Article {
 
     private Double quantity;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "categorie_id", nullable = false)
     private Categorie categorie;
 
